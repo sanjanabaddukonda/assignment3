@@ -1,0 +1,43 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-8">
+        <a href="/add" class="btn btn-primary" role="button">
+            <i class="fas fa-plus-circle"></i> Add a task</a>
+        <br>
+        <br>
+    <table class= "table table-bordered table-striped table-hover">
+    <tr>
+        <th class="text-center">task</th>
+        <th class="text-center">priority</th>
+        <th class="text-center">due</th>
+        <th class="text-center">edit</th>
+        <th class="text-center col-1">delete</th>
+    </tr>
+
+    <% for(let count=0; count<ToDoList.length; count++) { %>
+        <tr>
+        <td class="text-center col-2"><%= ToDoList[count].task%></td>
+        <td class="text-center col-2"><%= ToDoList[count].priority%></td>
+        <td class="text-center col-1"><%= ToDoList[count].due%></td>
+        <td class="text-center col-1">
+            <a href="/edit/<%= ToDoList[count]._id %>"
+            class="btn btn-primary"
+            <i class="fas fa-pencil-alt"></i> edit </a>
+        <td class="text-center col-1">
+            <a href="/delete/<%= ToDoList[count]._id %>"
+            class="btn btn-primary"
+            <i class="fas fa-trash-alt"></i> delete </a>
+        </td>
+        </tr>
+    <% } %>
+    </table>
+    </div>
+</div>
+</div>
+</main>
+
