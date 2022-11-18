@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+const { $where } = require('../../server/models/todolist');
 const ToDoList = require('../../server/models/todolist');
 
 //connect with book model
@@ -17,7 +18,7 @@ router.get('/',(req,res,next)=>{
     else
     {
       //res.render('todolist',{title:'To do List', });
-      res.render('ToDoList',{title:'To-do list', ToDoList: ToDoList});
+      res.render('todolist',{title:'To-do list', ToDoList: ToDoList})
     }
   });
 });
@@ -28,12 +29,13 @@ router.get('/add',(req,res,next)=>{
 
 });
 
-router.get('/add',(req,res,next)=>{
+router.post('/add',(req,res,next)=>{
   let newtask = list({
     "task":req.body.task,
     "priority":req.body.priority,
     "due":req.body.due
-  });
+  })
+
   ToDoList.create(newtask,(err,ToDoList)=>{
     if(err)
     {
@@ -47,6 +49,7 @@ router.get('/add',(req,res,next)=>{
   })
 
 });
+
 
 router.get('/edit:id',(req,res,next)=>{
   let id = req.params.id;
