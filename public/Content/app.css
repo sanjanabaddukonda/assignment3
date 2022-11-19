@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+  background: #a4a3a8;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.Landing{
+  margin-left: 3.3%;
+  margin-right: 3.3%;
+  color: black;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:10px;
+  
+}
+
+.Landing h1{
+  padding: 2%;
+  font-size: 50px;
+  color: black;
+  text-decoration: double;
+}
+
+.Landing p{
+  font-size:20px;
+}
