@@ -51,7 +51,7 @@ router.post('/add',(req,res,next)=>{
 
 });
 
-
+/* edit page*/
 router.get('/edit:id',(req,res,next)=>{
   let id = req.params.id;
   list.findById(id,(err,taskToEdit)=>{

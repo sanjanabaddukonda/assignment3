@@ -15,6 +15,8 @@ router.get('/index', function(req, res, next) {
   });
 });
 
+
+/* GET to do list page. */
 router.get('/todolist', function(req, res, next) {
   res.render('todolist', { 
     title: 'todolist'
